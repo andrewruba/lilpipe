@@ -213,3 +213,6 @@ __marimo__/
 notes/
 ideas/
 scratch/
+
+# Repository dumps
+/dump_repo
