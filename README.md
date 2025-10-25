@@ -20,24 +20,6 @@ A tiny, typed, sequential pipeline engine for Python.
 - **Composable steps** — nest via `Step(name, children=[...])`.
 - **Tiny surface area** — minimal API and dependencies.
 
-## Why not a DAG?
-
-**lilpipe is intentionally *not* a DAG/orchestrator.** It’s a tiny, in-process, sequential runner for code you’d otherwise write as a script.
-
-**Use lilpipe when…**
-- The whole workflow runs **top-to-bottom in one process** and finishes in **seconds/minutes**.
-- You don’t want extra infra: **no server, no scheduler UI, no metadata DB**.
-- You want a **typed, validated shared state** (Pydantic `PipelineContext`) flowing step-to-step with helpful errors.
-- You want **incremental reruns**: fingerprint caching to **skip unchanged steps** across runs.
-- You need simple **retry/abort** semantics without standing up an orchestrator.
-- You like **small, testable units**: steps you can unit-test and compose (`Step("name", children=[...])`).
-
-*Examples:*  
-- **Data science:** CSV → clean → feature engineer → fit/evaluate → export plots.
-- **Lab/assay:** load plate → calibrate → QC/validate → generate PDF report.
-- **Data eng script:** pull S3 JSON → normalize → write Parquet → send Slack notification.
-- **Dev tooling:** codegen → format → validate → publish artifact.
-
 ## Installation
 
 ```bash
