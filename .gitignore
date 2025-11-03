@@ -214,5 +214,8 @@ notes/
 ideas/
 scratch/
 
+# Repo dump
+repo_dump/
+
 # Repository dumps
 /dump_repo
